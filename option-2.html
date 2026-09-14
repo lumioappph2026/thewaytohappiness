@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Way to Happiness — A common sense guide to better living</title>
+<meta name="description" content="The first moral code based wholly on common sense. 21 precepts that point the way to a better, happier and more fulfilling life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   OPTION 2 — "Split"
+   A hard vertical split: deep blue holds the words, the image
+   half holds the object. Bold, modern, high contrast.
+   ============================================================ */
+
+:root {
+  /* Steel — a colder blue with cyan in it */
+  --navy-950: #03192F;
+  --navy-900: #062A4B;
+  --navy-800: #0E3D6B;
+  --navy-700: #1B5B96;
+
+  /* Copper — the sharpest, most burnt of the four */
+  --ember:       #D97428;
+  --ember-solid: #A24A12;   /* 6.0:1 with white */
+  --ember-wash:  #FBEFE4;
+
+  --white: #FFFFFF;
+  --tint:  #EDF2F8;
+  --ink:   #062A4B;
+  --slate: #38566F;
+  --line:  #DBE4EF;
+
+  --onnavy:     #CFDEEF;
+  --onnavy-dim: #8DA8C4;
+  --line-navy:  rgba(180, 210, 240, 0.22);
+
+  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --wrap: 1220px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--slate);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0; }
+
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+}
+
+.band { padding-top: clamp(5rem, 9.5vw, 8.5rem); padding-bottom: clamp(5rem, 9.5vw, 8.5rem); }
+.band--tint { background: var(--tint); }
+.band--navy { background: var(--navy-900); color: var(--onnavy); }
+.band--navy h2, .band--navy h3, .band--navy h4 { color: var(--white); }
+
+.h-xl { font-size: clamp(2.875rem, 5.4vw, 4.75rem); line-height: 1.0; letter-spacing: -0.048em; }
+.h-lg { font-size: clamp(2.125rem, 3.9vw, 3.25rem); letter-spacing: -0.038em; }
+.h-md { font-size: clamp(1.25rem, 1.8vw, 1.5rem); letter-spacing: -0.02em; }
+
+.lede { font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.6; max-width: 56ch; }
+
+/* Number-led section marker — this design counts its sections */
+.marker {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  color: var(--ember-solid);
+}
+.marker::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--ember) 0%, var(--line) 18%, rgba(219, 228, 239, 0) 100%); }
+.band--navy .marker { color: var(--ember); }
+.band--navy .marker::after { background: var(--line-navy); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1rem 1.875rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font: inherit; font-size: 1.0625rem; font-weight: 700; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  transition: background-color 180ms var(--ease), color 180ms var(--ease),
+              border-color 180ms var(--ease), transform 180ms var(--ease);
+}
+.btn--primary {
+  background: linear-gradient(180deg, #E5873B 0%, var(--ember) 55%, #C0641E 100%);
+  border-color: var(--ember);
+  color: var(--navy-950);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 26px -12px rgba(217, 116, 40, 0.85);
+}
+.btn--primary:hover {
+  background: linear-gradient(180deg, #F09A50 0%, #E5873B 55%, #CC6E22 100%);
+  border-color: #EA8B3E; transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 18px 34px -12px rgba(217, 116, 40, 0.95);
+}
+.btn--onnavy { border-color: rgba(211, 224, 240, 0.45); color: var(--white); }
+.btn--onnavy:hover { background: var(--white); border-color: var(--white); color: var(--navy-900); }
+.btn--dark { background: var(--navy-900); border-color: var(--navy-900); color: var(--white); }
+.btn--dark:hover { background: var(--navy-700); border-color: var(--navy-700); transform: translateY(-2px); }
+.btn--ghost { border-color: var(--navy-900); color: var(--navy-900); }
+.btn--ghost:hover { background: var(--navy-900); color: var(--white); }
+.btn--sm { padding: 0.625rem 1.25rem; font-size: 0.9375rem; }
+
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 3px solid var(--ember); outline-offset: 3px; border-radius: 4px;
+}
+
+.tlink {
+  font-weight: 700; color: var(--ember-solid); text-decoration: none;
+  border-bottom: 2px solid rgba(178, 90, 23, 0.3); padding-bottom: 2px;
+  transition: border-color 180ms var(--ease);
+}
+.tlink:hover { border-bottom-color: var(--ember-solid); }
+.band--navy .tlink, .foot .tlink { color: var(--ember); border-bottom-color: rgba(229, 138, 51, 0.45); }
+
+/* ============================================================
+   NAV — sits on the navy half, so it can be transparent
+   ============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(6, 42, 75, 0.88);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(190, 214, 240, 0.12);
+}
+.nav__inner { display: flex; align-items: center; gap: 1.5rem; min-height: 78px; }
+.nav__brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; flex: none; }
+.nav__brand .emblem { width: 42px; height: 42px; }
+.nav__brand .wordmark { width: 152px; }
+.nav__links {
+  display: flex; align-items: center; gap: clamp(0.75rem, 1.8vw, 1.75rem);
+  margin: 0 0 0 auto; padding: 0; list-style: none;
+}
+.nav__links a {
+  color: var(--onnavy); text-decoration: none; font-size: 0.9375rem; font-weight: 600;
+  white-space: nowrap; transition: color 160ms var(--ease);
+}
+.nav__links a:hover { color: var(--ember); }
+.nav__toggle {
+  display: none; margin-left: auto; background: none;
+  border: 1px solid var(--line-navy); border-radius: 999px;
+  padding: 0.5rem 1rem; color: var(--white); font: inherit; font-weight: 600; cursor: pointer;
+}
+@media (max-width: 1040px) {
+  .nav__links { display: none; }
+  .nav__toggle { display: block; }
+  .nav--open .nav__links {
+    display: flex; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 0.5rem 0 1.25rem; background: var(--navy-900);
+    border-top: 1px solid var(--line-navy);
+  }
+  .nav--open .nav__links a { padding: 0.875rem clamp(1.25rem, 4vw, 3rem); font-size: 1.0625rem; }
+  .nav--open .nav__links .btn { margin: 0.5rem clamp(1.25rem, 4vw, 3rem) 0; }
+}
+
+/* ============================================================
+   HERO — a single photograph, the words sitting on it
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: min(660px, 82vh);
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+  background: var(--navy-950);
+}
+.hero__img { position: absolute; inset: 0; }
+.hero__img img { width: 100%; height: 100%; object-fit: cover; }
+.hero__img::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(3, 25, 47, 0.92) 0%, rgba(3, 25, 47, 0.58) 46%, rgba(3, 25, 47, 0.3) 100%),
+    linear-gradient(180deg, rgba(3, 25, 47, 0.55) 0%, transparent 30%, rgba(3, 25, 47, 0.85) 100%);
+}
+
+.hero__body {
+  position: relative; z-index: 2; width: 100%;
+  padding-top: clamp(4rem, 12vw, 9rem);
+  padding-bottom: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--ember); font-size: 0.9375rem; font-weight: 700;
+  margin-bottom: 1.125rem;
+}
+.eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ember); }
+
+.hero h1 { color: var(--white); font-weight: 400; }
+.hero h1 strong { display: block; font-weight: 800; text-transform: uppercase; letter-spacing: -0.035em; }
+
+.hero__grid {
+  display: grid; grid-template-columns: 1.25fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end;
+  margin-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid rgba(207, 222, 239, 0.28);
+}
+.hero__note { color: var(--onnavy); font-size: 1rem; line-height: 1.6; max-width: 42ch; }
+
+/* pill with a circled arrow, as on the reference */
+.pill-btn {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.375rem;
+  border-radius: 999px; border: 1px solid rgba(207, 222, 239, 0.5);
+  color: var(--white); text-decoration: none;
+  font-size: 1rem; font-weight: 600;
+  transition: background-color 200ms var(--ease), color 200ms var(--ease), border-color 200ms var(--ease);
+}
+.pill-btn i {
+  display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--ember); color: var(--navy-950);
+  font-style: normal; font-size: 0.9rem; line-height: 1;
+  transition: transform 240ms var(--ease);
+}
+.pill-btn:hover { background: var(--white); color: var(--navy-900); border-color: var(--white); }
+.pill-btn:hover i { transform: translateX(2px) rotate(-45deg); }
+.pill-btn--solid { background: var(--ember); border-color: var(--ember); color: var(--navy-950); }
+.pill-btn--solid i { background: var(--navy-900); color: var(--white); }
+.pill-btn--solid:hover { background: var(--white); border-color: var(--white); }
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; align-items: start; }
+}
+
+/* ============================================================
+   STATS — a wide row, the way the reference sets them out
+   ============================================================ */
+.figures {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+.figures div { position: relative; padding-top: 1.25rem; border-top: 2px solid var(--ember); }
+.figures b {
+  display: block;
+  font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 800;
+  letter-spacing: -0.05em; line-height: 1; color: var(--ink);
+}
+.figures span { display: block; margin-top: 0.5rem; font-size: 0.9375rem; }
+@media (max-width: 760px) { .figures { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================================================
+   BENTO — numbered image tiles
+   ============================================================ */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.tile {
+  position: relative; overflow: hidden; border-radius: 18px;
+  min-height: clamp(200px, 24vw, 320px);
+  display: flex; align-items: flex-end;
+  text-decoration: none; color: var(--white);
+  background: var(--navy-800);
+  transition: transform 320ms var(--ease), box-shadow 320ms var(--ease);
+}
+.tile:nth-child(1) { grid-column: span 2; }
+.tile:nth-child(4) { grid-column: span 2; }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 620ms var(--ease); }
+.tile::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(3, 25, 47, 0.25) 0%, rgba(3, 25, 47, 0.55) 38%, rgba(3, 25, 47, 0.96) 100%);
+}
+.tile:hover { transform: translateY(-4px); box-shadow: 0 26px 46px -24px rgba(3, 25, 47, 0.75); }
+.tile:hover img { transform: scale(1.06); }
+.tile__body { position: relative; z-index: 2; padding: clamp(1.125rem, 2vw, 1.75rem); }
+.tile__n { display: block; font-size: 0.8125rem; font-weight: 800; color: var(--ember); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.tile h3 { color: var(--white); font-size: clamp(1.125rem, 1.7vw, 1.5rem); }
+.tile p { margin-top: 0.375rem; font-size: 0.9375rem; color: rgba(207, 222, 239, 0.9); max-width: 34ch; }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .tile:nth-child(1), .tile:nth-child(4) { grid-column: span 2; }
+}
+
+/* ============================================================
+   WHAT IS IT
+   ============================================================ */
+.what { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.what__statement { font-size: clamp(1.3125rem, 2vw, 1.625rem); line-height: 1.5; color: var(--ink); font-weight: 500; max-width: 44ch; }
+.mission {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  background: var(--navy-900); color: var(--onnavy);
+  border-radius: 28px;
+}
+.mission p { max-width: 74ch; }
+.mission em { font-style: italic; color: var(--white); }
+@media (max-width: 880px) { .what { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   GALLERY — one feature, thumbnails choose it
+   ============================================================ */
+.gallery { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+
+.feature { position: relative; border-radius: 28px; overflow: hidden; background: var(--navy-800); box-shadow: 0 0 0 1px rgba(255,255,255,.5), 0 30px 60px -34px rgba(3, 25, 47, 0.7); }
+.feature img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.feature__play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 82px; height: 82px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  display: grid; place-items: center; border: none; cursor: pointer;
+  transition: background-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.feature__play:hover { background: var(--ember); transform: translate(-50%, -50%) scale(1.05); }
+.feature__play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--navy-900); }
+.feature__play[hidden] { display: none; }
+
+.feature__bar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.5rem 1.75rem 1.5rem;
+  background: linear-gradient(180deg, transparent, rgba(3, 25, 47, 0.88));
+  color: var(--white);
+}
+.feature__bar h3 { color: var(--white); font-size: clamp(1.125rem, 1.6vw, 1.375rem); }
+.feature__bar p { margin-top: 0.25rem; font-size: 0.9375rem; color: var(--onnavy); }
+
+.picker { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; perspective: 900px; }
+.pick {
+  position: relative; border: none; padding: 0; background: none; cursor: pointer;
+  border-radius: 16px; overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+}
+.pick img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.pick::after {
+  content: ""; position: absolute; inset: 0;
+  background: rgba(3, 25, 47, 0.4);
+  transition: background-color 220ms var(--ease);
+}
+.pick:hover { transform: translateZ(26px) rotateY(-4deg); box-shadow: 0 22px 34px -18px rgba(3, 25, 47, 0.55); }
+.pick:hover::after { background: rgba(3, 25, 47, 0.12); }
+.pick[aria-selected="true"] { box-shadow: 0 0 0 3px var(--ember), 0 18px 32px -20px rgba(3, 25, 47, 0.6); }
+.pick[aria-selected="true"]::after { background: rgba(3, 25, 47, 0); }
+.pick__tag {
+  position: absolute; left: 8px; top: 8px; z-index: 2;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  color: var(--navy-900);
+  font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.04em;
+  padding: 3px 8px; border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: 1fr; }
+  .picker { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============================================================
+   21 PRECEPTS — two tall columns on navy
+   ============================================================ */
+.precepts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(2rem, 5vw, 4rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.precept {
+  display: flex; align-items: baseline; gap: 1.25rem;
+  padding: 1.125rem 0.75rem;
+  border-bottom: 1px solid var(--line-navy);
+  text-decoration: none;
+  transition: background-color 200ms var(--ease), padding-left 200ms var(--ease);
+}
+.precept:hover, .precept:focus-visible { background: rgba(229, 138, 51, 0.12); padding-left: 1.25rem; }
+.precept__n { flex: none; width: 2.2em; font-weight: 800; font-size: 1.0625rem; color: var(--ember); letter-spacing: -0.02em; }
+.precept__t { font-size: 1.0625rem; font-weight: 600; color: var(--white); line-height: 1.4; }
+@media (max-width: 780px) { .precepts { grid-template-columns: 1fr; } }
+
+/* 3D stacked numeral */
+.stack3d {
+  font-size: clamp(4.5rem, 10vw, 8rem); font-weight: 800; line-height: 0.85;
+  letter-spacing: -0.06em; color: var(--ember);
+  text-shadow:
+    1px 1px 0 #C66A24, 2px 2px 0 #B26020, 3px 3px 0 #9E561C, 4px 4px 0 #8A4C18,
+    5px 5px 0 #764214, 6px 6px 0 #623810, 7px 7px 0 #4E2E0C, 8px 8px 0 #3A2408,
+    10px 12px 22px rgba(3, 25, 47, 0.55);
+}
+
+/* ============================================================
+   CUSTOM EDITIONS
+   ============================================================ */
+.custom { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.custom__img { border-radius: 28px; overflow: hidden; }
+.custom__img img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 880px) { .custom { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   COURSE / APP / DAILY / INVOLVED
+   ============================================================ */
+.duo2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 2.5vw, 2rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid transparent;
+  border-radius: 28px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(217, 116, 40, 0.45) 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 18px 40px -26px rgba(3, 25, 47, 0.45);
+  padding: clamp(2rem, 3.4vw, 2.75rem);
+}
+.card h3 { margin-bottom: 0.75rem; }
+.card p { margin-bottom: 1.75rem; font-size: 1.0625rem; }
+@media (max-width: 780px) { .duo2 { grid-template-columns: 1fr; } }
+
+.appstore {
+  display: inline-flex; align-items: center; gap: 0.6875rem;
+  padding: 0.5625rem 1.25rem 0.625rem; border: 2px solid var(--navy-900); border-radius: 999px;
+  color: var(--navy-900); text-decoration: none;
+  transition: background-color 180ms var(--ease), color 180ms var(--ease);
+}
+.appstore:hover { background: var(--navy-900); color: var(--white); }
+.appstore svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
+.appstore > span {
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+.appstore .small {
+  display: block;
+  font-size: 0.6875rem; line-height: 1.15;
+  letter-spacing: 0.01em; opacity: 0.75;
+}
+.appstore b {
+  display: block;
+  font-weight: 800;
+  font-size: 1.0625rem; line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 1px;
+}
+
+.daily { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.daily__actions { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-top: 2rem; }
+@media (max-width: 720px) { .daily { grid-template-columns: 1fr; } }
+
+.involved { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.involved > div { background: var(--tint); border-radius: 28px; padding: clamp(1.75rem, 3.2vw, 2.375rem); }
+.involved h3 { margin-bottom: 0.625rem; }
+.involved p { margin-bottom: 1.25rem; font-size: 1.0625rem; }
+
+/* ============================================================
+   SIGNUP + FOOTER
+   ============================================================ */
+.signup__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.signup h2 { max-width: 16ch; }
+.signup form { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.signup input {
+  min-width: 280px; padding: 1rem 1.25rem;
+  border: 2px solid var(--line-navy); border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08); font: inherit; font-size: 1.0625rem; color: var(--white);
+}
+.signup input::placeholder { color: var(--onnavy-dim); }
+.signup input:focus { border-color: var(--ember); outline: none; }
+.signup .decline { background: none; border: none; font: inherit; color: var(--onnavy-dim); text-decoration: underline; cursor: pointer; }
+
+.foot { background: var(--navy-950); color: var(--onnavy-dim); padding: clamp(3.5rem, 6vw, 5rem) 0 2rem; }
+.foot a { color: var(--onnavy); text-decoration: none; transition: color 160ms var(--ease); }
+.foot a:hover { color: var(--ember); }
+.foot__top { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); padding-bottom: 3rem; border-bottom: 1px solid var(--line-navy); }
+.foot__brand .lockup { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.foot__brand .emblem { width: 44px; height: 44px; }
+.foot__brand .wordmark { width: 150px; }
+.foot__brand p { font-size: 0.9375rem; margin-bottom: 1.25rem; max-width: 50ch; }
+.foot h4 { color: var(--white); font-size: 1rem; margin-bottom: 1.125rem; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { margin-bottom: 0.625rem; font-size: 0.9375rem; }
+.foot__langs { padding: 2.5rem 0; border-bottom: 1px solid var(--line-navy); }
+.foot__langs ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.375rem; }
+.foot__langs li { margin: 0; font-size: 0.875rem; }
+.foot__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding-top: 2rem; font-size: 0.8125rem; }
+.foot__legal ul { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.foot__legal li { margin: 0; font-size: 0.8125rem; }
+@media (max-width: 860px) { .foot__top { grid-template-columns: 1fr; } }
+
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero__panel::after { animation: none; }
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" aria-label="The Way to Happiness — home">
+      <img class="emblem" src="assets/the-way-to-happiness-logo_en.png" alt="">
+      <img class="wordmark" src="assets/the-way-to-happiness.svg" alt="The Way to Happiness">
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">About us</a></li>
+      <li><a href="#precepts">The 21 precepts</a></li>
+      <li><a href="#programs">Programs &amp; results</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#course">Free course</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a class="btn btn--primary btn--sm" href="#order">Order</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero__img">
+    <img src="assets/photos/hero-road.jpg" width="1800" height="1000" alt="A road at sunrise">
+  </div>
+
+  <div class="wrap hero__body">
+    <p class="eyebrow">A common sense guide to better living</p>
+    <h1 class="h-xl">Learn it. Live it.<strong>Share it.</strong></h1>
+
+    <div class="hero__grid">
+      <div class="hero__actions">
+        <a class="pill-btn pill-btn--solid" href="#order">Order your copies <i>&rsaquo;</i></a>
+        <a class="pill-btn" href="#videos">See the video <i>&rsaquo;</i></a>
+      </div>
+      <p class="hero__note">
+        The first moral code based wholly on common sense. Twenty-one precepts,
+        in over 100 languages, since 1981.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIGURES ================= -->
+<section class="band" style="padding-top:clamp(3rem,6vw,4.5rem); padding-bottom:clamp(3rem,6vw,4.5rem);">
+  <div class="wrap">
+    <div class="figures">
+      <div><b>21</b><span>Precepts</span></div>
+      <div><b>100+</b><span>Languages</span></div>
+      <div><b>1981</b><span>First published</span></div>
+      <div><b>22</b><span>International sites</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT IS IT ================= -->
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="what">
+      <div>
+        <p class="marker">01 — About</p>
+        <h2 class="h-lg">What is The Way to Happiness?</h2>
+      </div>
+      <div>
+        <p class="what__statement">
+          The first moral code based wholly on common sense, originally published
+          in 1981, its purpose is to help arrest the current moral decline in
+          society and restore integrity and trust to Man.
+        </p>
+        <p style="margin-top:1.75rem;"><a class="tlink" href="#videos">See the video</a></p>
+      </div>
+    </div>
+
+    <div class="mission">
+      <p>
+        The mission of The Way to Happiness Foundation International is to reverse
+        the moral decay of society by restoring trust and honesty the world over
+        through the publication and widespread distribution of <em>The Way to
+        Happiness</em>, a common sense guide to better living.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="band band--tint" id="videos">
+  <div class="wrap">
+    <p class="marker">02 — Watch</p>
+    <h2 class="h-lg">Videos &amp; images</h2>
+    <p class="lede" style="margin-top:1rem; margin-bottom:2.5rem;">
+      Public service announcements for the precepts, the full film, and pictures
+      from distribution teams around the world.
+    </p>
+
+    <div class="gallery">
+      <figure class="feature" style="margin:0">
+        <img id="featImg" src="assets/thumbs/01-film.jpg" width="1200" height="750"
+             alt="Key art for the film: a sunlit meadow with a winding path">
+        <button class="feature__play" id="featPlay" aria-label="Play this video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <figcaption class="feature__bar">
+          <h3 id="featTitle">The Way to Happiness — the film</h3>
+          <p id="featSub">The 21 precepts, dramatised</p>
+        </figcaption>
+      </figure>
+
+      <div class="picker" id="picker" role="tablist" aria-label="Choose a video or image"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 21 PRECEPTS ================= -->
+<section class="band band--navy" id="precepts">
+  <div class="wrap">
+    <p class="marker">03 — The precepts</p>
+    <div style="display:flex; align-items:center; gap:clamp(1.5rem,4vw,3rem); flex-wrap:wrap;">
+      <span class="stack3d" aria-hidden="true">21</span>
+      <div>
+        <h2 class="h-lg">Precepts for better living</h2>
+        <p class="lede" style="margin-top:1rem; color:var(--onnavy);">
+          Each one stands on its own, and each one rests on common sense. Read
+          them, use them, and pass them on.
+        </p>
+      </div>
+    </div>
+
+    <div class="precepts">
+      <a class="precept" href="#precepts"><span class="precept__n">01</span><span class="precept__t">Take Care of Yourself</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">12</span><span class="precept__t">Safeguard and Improve Your Environment</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">02</span><span class="precept__t">Be Temperate</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">13</span><span class="precept__t">Do Not Steal</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">03</span><span class="precept__t">Don't Be Promiscuous</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">14</span><span class="precept__t">Be Worthy of Trust</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">04</span><span class="precept__t">Love and Help Children</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">15</span><span class="precept__t">Fulfill Your Obligations</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">05</span><span class="precept__t">Honor and Help Your Parents</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">16</span><span class="precept__t">Be Industrious</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">06</span><span class="precept__t">Set a Good Example</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">17</span><span class="precept__t">Be Competent</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">07</span><span class="precept__t">Seek to Live With the Truth</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">18</span><span class="precept__t">Respect the Religious Beliefs of Others</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">08</span><span class="precept__t">Do Not Murder</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">19</span><span class="precept__t">Try Not to Do Things to Others That You Would Not Like Them to Do to You</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">09</span><span class="precept__t">Don't Do Anything Illegal</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">20</span><span class="precept__t">Try to Treat Others as You Would Want Them to Treat You</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">10</span><span class="precept__t">Support a Government Designed and Run for All the People</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">21</span><span class="precept__t">Flourish and Prosper</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">11</span><span class="precept__t">Do Not Harm a Person of Good Will</span></a>
+      <a class="precept" href="#precepts"><span class="precept__n">&sect;</span><span class="precept__t">Epilogue</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KITS ================= -->
+<section class="band" id="programs">
+  <div class="wrap">
+    <p class="marker">04 — Programs</p>
+    <h2 class="h-lg">Free tools &amp; programs</h2>
+    <p class="lede" style="margin-top:1rem; margin-bottom:2.5rem;">
+      Educators, businesses and correctional professionals each get a kit built
+      for their setting, with everything needed to guide others toward a better
+      quality of life.
+    </p>
+
+    <div class="bento">
+      <a class="tile" href="#order">
+        <img src="assets/thumbs/04-classroom.jpg" width="1200" height="750" loading="lazy" alt="The educator's kit, with guide, booklets and DVD">
+        <div class="tile__body">
+          <span class="tile__n">01</span>
+          <h3>For educators</h3>
+          <p>Trust, honesty and respect are attributes worth fostering in any classroom.</p>
+        </div>
+      </a>
+      <a class="tile" href="#order">
+        <img src="assets/photos/industrious.jpg" width="1200" height="750" loading="lazy" alt="A person at work">
+        <div class="tile__body">
+          <span class="tile__n">02</span>
+          <h3>For businesses</h3>
+          <p>Theft, dishonesty and staff turnover are symptoms of a moral crisis.</p>
+        </div>
+      </a>
+      <a class="tile" href="#order">
+        <img src="assets/photos/truth.jpg" width="1200" height="750" loading="lazy" alt="A person looking ahead">
+        <div class="tile__body">
+          <span class="tile__n">03</span>
+          <h3>For corrections</h3>
+          <p>A program that restores self-respect, so people do not return to crime.</p>
+        </div>
+      </a>
+      <a class="tile" href="#order">
+        <img src="assets/thumbs/02-languages.jpg" width="1200" height="750" loading="lazy" alt="The booklet shown with a stack of copies">
+        <div class="tile__body">
+          <span class="tile__n">04</span>
+          <h3>Custom editions</h3>
+          <p>Your own name or message on the cover, printed on demand in over 100 languages.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTOM EDITIONS ================= -->
+<section class="band band--tint" id="order">
+  <div class="wrap">
+    <div class="custom">
+      <div class="custom__img">
+        <img src="assets/thumbs/02-languages.jpg" width="1200" height="750" loading="lazy"
+             alt="The booklet shown with a stack of copies">
+      </div>
+      <div>
+        <p class="marker">05 — Order</p>
+        <h2 class="h-lg">Each person has an effect on someone else — positive or negative.</h2>
+        <p class="lede" style="margin-top:1.25rem;">
+          Put your own name, message or organisation on the cover. Custom
+          editions are printed on demand in Glendale, California, in over 100
+          languages, so the copies you hand out speak for you.
+        </p>
+        <p style="margin-top:2rem;"><a class="btn btn--dark" href="#order">Make your own custom edition</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COURSE ================= -->
+<section class="band" id="course">
+  <div class="wrap">
+    <p class="marker">06 — Learn</p>
+    <h2 class="h-lg">Free online course</h2>
+    <p class="lede" style="margin-top:1rem;">
+      Take a free online course and learn to use all 21 precepts in your daily
+      life. It points the way to a better, happier and more fulfilling life for
+      you and those around you.
+    </p>
+
+    <div class="duo2">
+      <div class="card">
+        <h3 class="h-md">Enrol and start today</h3>
+        <p>Twenty-one lessons, one precept at a time, at whatever pace suits you. There is no cost and no obligation.</p>
+        <a class="btn btn--primary" href="#course">Enroll now</a>
+      </div>
+      <div class="card">
+        <h3 class="h-md">The education app</h3>
+        <p>Review and grade your students' lessons right from your phone, fully synchronised with your other mobile devices.</p>
+        <a class="appstore" href="#course">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.42 2.2-1.12 3-.77.88-2.02 1.56-3.06 1.47-.13-1.1.42-2.25 1.1-3.02.77-.88 2.11-1.53 3.08-1.45zM20.9 17.02c-.55 1.28-.82 1.85-1.53 2.98-.99 1.58-2.39 3.55-4.12 3.56-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.02-3.05-1.79-4.04-3.37C.36 15.77-.02 10.6 1.83 7.9c1.3-1.93 3.35-3.06 5.28-3.06 1.96 0 3.2 1.08 4.82 1.08 1.58 0 2.54-1.08 4.81-1.08 1.71 0 3.53.94 4.82 2.55-4.24 2.32-3.55 8.37.34 9.63z"/></svg>
+          <span><span class="small">Download on the</span><b>App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECEPT OF THE DAY ================= -->
+<section class="band band--navy">
+  <div class="wrap daily">
+    <span class="stack3d" aria-hidden="true">1</span>
+    <div>
+      <p class="marker">07 — Today</p>
+      <h2 class="h-lg">Take care of yourself</h2>
+      <div class="daily__actions">
+        <a class="btn btn--primary" href="#videos">Watch the PSA</a>
+        <a class="btn btn--onnavy" href="#precepts">Read it</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GET INVOLVED ================= -->
+<section class="band" id="news">
+  <div class="wrap">
+    <p class="marker">08 — Take part</p>
+    <h2 class="h-lg">Get involved</h2>
+    <div class="involved">
+      <div>
+        <h3 class="h-md">Education</h3>
+        <p>Learn to use all 21 precepts in your daily life. It points the way to a better, happier and more fulfilling life for you and those around you.</p>
+        <a class="tlink" href="#course">Enroll now</a>
+      </div>
+      <div>
+        <h3 class="h-md">Join a team</h3>
+        <p>There are The Way to Happiness chapters all over the world. To join a local chapter or start your own, contact us.</p>
+        <a class="tlink" href="#news">Join a team</a>
+      </div>
+      <div>
+        <h3 class="h-md">Learn it. Live it. Share it.</h3>
+        <p>Start spreading happiness right in your own home, workplace or community.</p>
+        <a class="tlink" href="#order">Order your copies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIGNUP ================= -->
+<section class="band band--navy signup" style="padding-top:clamp(2.5rem,5vw,4rem); padding-bottom:clamp(2.5rem,5vw,4rem);">
+  <div class="wrap signup__inner">
+    <h2 class="h-lg">Sign up for news and updates</h2>
+    <form onsubmit="return false;">
+      <label class="vh" for="email">Email address</label>
+      <input id="email" type="email" placeholder="Your email address" required>
+      <button class="btn btn--primary" type="submit">Subscribe</button>
+      <button type="button" class="decline">No thanks</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <div class="lockup">
+          <img class="emblem" src="assets/the-way-to-happiness-logo_en.png" alt="">
+          <img class="wordmark" src="assets/the-way-to-happiness.svg" alt="The Way to Happiness">
+        </div>
+        <p>
+          The Way to Happiness Foundation is a purely secular charitable
+          organization, coordinated by the Association for Better Living and
+          Education (ABLE), an organization dedicated to resolving the major
+          societal ills of drugs, crime, illiteracy and immorality.
+        </p>
+        <a class="tlink" href="#about">Learn more</a>
+      </div>
+      <div>
+        <h4>The foundation</h4>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#precepts">The 21 precepts</a></li>
+          <li><a href="#programs">Programs &amp; results</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#news">Contact</a></li>
+          <li><a href="#news">Sitemap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn &amp; use</h4>
+        <ul>
+          <li><a href="#course">Education</a></li>
+          <li><a href="#course">The Way to Happiness app</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#order">Custom editions</a></li>
+          <li><a href="#programs">Information kits</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__langs">
+      <h4>International sites</h4>
+      <ul>
+        <li><a href="#">English (US)</a></li><li><a href="#">English (International)</a></li>
+        <li><a href="#">English (Canadian)</a></li><li><a href="#">English (New Zealand)</a></li>
+        <li><a href="#">English (South Africa)</a></li><li><a href="#">Dansk</a></li>
+        <li><a href="#">Nederlands</a></li><li><a href="#">Français</a></li>
+        <li><a href="#">Deutsch</a></li><li><a href="#">Ελληνικά</a></li>
+        <li><a href="#">עברית</a></li><li><a href="#">Magyar</a></li>
+        <li><a href="#">Italiano</a></li><li><a href="#">日本語</a></li>
+        <li><a href="#">Norsk</a></li><li><a href="#">Português</a></li>
+        <li><a href="#">Русский</a></li><li><a href="#">Español (Latinoamérica)</a></li>
+        <li><a href="#">Español (Castellano)</a></li><li><a href="#">Svenska</a></li>
+        <li><a href="#">中文</a></li><li><a href="#">العربية</a></li>
+      </ul>
+    </div>
+
+    <div class="foot__legal">
+      <p>© 1996–2026 The Way to Happiness Foundation International. All Rights Reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Notice</a></li><li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Terms of Use</a></li><li><a href="#">Legal Notice</a></li>
+        <li><a href="index.html">Back to options</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Menu ---------- */
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('nav--open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  document.getElementById('navLinks').addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('nav--open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  /* ---------- Booklet turns toward the pointer ---------- */
+  var booklet = document.getElementById('booklet');
+  var zone = booklet && booklet.closest('.hero');
+  if (!reduce && zone && window.matchMedia('(pointer: fine)').matches) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, ticking = false;
+    var shift = window.innerWidth > 940 ? -14 : 0;
+    var far = document.querySelector('.depth__card--far');
+    var near = document.querySelector('.depth__card--near');
+    var frame = function () {
+      cx += (tx - cx) * 0.09; cy += (ty - cy) * 0.09;
+      booklet.style.transform = 'translateX(' + shift + '%) rotateY(' + (-10 + cx * 15) + 'deg) rotateX(' + (3 - cy * 8) + 'deg)';
+      /* the suspended photographs swing further, because they are deeper in */
+      if (far)  far.style.transform  = 'translate3d(' + (-96 + cx * 9) + '%,' + (-40 + cy * 7) + '%, -300px) rotateY(' + (30 + cx * 16) + 'deg) rotateX(' + (6 - cy * 8) + 'deg)';
+      if (near) near.style.transform = 'translate3d(' + (84 + cx * 9) + '%,' + (40 + cy * 7) + '%, -170px) rotateY(' + (-26 + cx * 16) + 'deg) rotateX(' + (-5 - cy * 8) + 'deg)';
+      if (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) requestAnimationFrame(frame); else ticking = false;
+    };
+    zone.addEventListener('pointermove', function (e) {
+      var r = zone.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width - 0.5;
+      ty = (e.clientY - r.top) / r.height - 0.5;
+      if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+    });
+    zone.addEventListener('pointerleave', function () { tx = 0; ty = 0; if (!ticking) { ticking = true; requestAnimationFrame(frame); } });
+  }
+
+  /* ---------- Gallery: thumbnails drive one big feature ---------- */
+  var items = [
+    { src: 'assets/thumbs/01-film.jpg',        kind: 'Video', title: 'The Way to Happiness — the film',              sub: 'The 21 precepts, dramatised',        alt: 'Key art for the film: a sunlit meadow with a winding path' },
+    { src: 'assets/thumbs/02-languages.jpg',   kind: 'Image', title: 'Printed in over 100 languages',                sub: 'Print-on-demand, Glendale, California', alt: 'The booklet shown with a stack of copies' },
+    { src: 'assets/thumbs/03-take-care.jpg',   kind: 'Video', title: 'Precept 1: Take care of yourself',             sub: 'Public service announcement',        alt: 'A young man brushing his teeth' },
+    { src: 'assets/thumbs/04-classroom.jpg',   kind: 'Image', title: "The educator's kit in the classroom",          sub: 'Trust, honesty and respect',         alt: "The educator's kit, with guide, booklets and DVD" },
+    { src: 'assets/thumbs/05-environment.jpg', kind: 'Video', title: 'Precept 12: Safeguard and improve your environment', sub: 'Public service announcement',  alt: 'A young man outdoors' },
+    { src: 'assets/thumbs/06-volunteers.jpg',  kind: 'Video', title: 'Precept 6: Set a good example',                sub: 'Public service announcement',        alt: 'A child looking on' }
+  ];
+
+  var picker = document.getElementById('picker');
+  var featImg = document.getElementById('featImg');
+  var featTitle = document.getElementById('featTitle');
+  var featSub = document.getElementById('featSub');
+  var featPlay = document.getElementById('featPlay');
+
+  function select(i) {
+    var it = items[i];
+    featImg.src = it.src; featImg.alt = it.alt;
+    featTitle.textContent = it.title;
+    featSub.textContent = it.sub;
+    featPlay.hidden = it.kind !== 'Video';
+    [].forEach.call(picker.children, function (b, n) {
+      b.setAttribute('aria-selected', String(n === i));
+      b.tabIndex = n === i ? 0 : -1;
+    });
+  }
+
+  items.forEach(function (it, i) {
+    var b = document.createElement('button');
+    b.className = 'pick';
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', it.kind + ': ' + it.title);
+    b.innerHTML = '<span class="pick__tag">' + it.kind + '</span>' +
+                  '<img src="' + it.src + '" alt="" loading="lazy" width="1200" height="750">';
+    b.addEventListener('click', function () { select(i); });
+    picker.appendChild(b);
+  });
+
+  picker.addEventListener('keydown', function (e) {
+    var cur = [].indexOf.call(picker.children, document.activeElement);
+    if (cur < 0) return;
+    var next = e.key === 'ArrowRight' ? cur + 1 : e.key === 'ArrowLeft' ? cur - 1 : -1;
+    if (next < 0 || next >= items.length) return;
+    e.preventDefault(); select(next); picker.children[next].focus();
+  });
+
+  select(0);
+})();
+</script>
+
+</body>
+</html>

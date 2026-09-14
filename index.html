@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Way to Happiness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #070B15;
+    --field:      #131D33;
+    --steel:      #2F5A79;
+    --dawn:       #F2D49B;
+    --text:       #DCE4F2;
+    --text-dim:   #8FA0BE;
+
+    --rule:       rgba(47, 90, 121, 0.45);
+    --rule-lit:   rgba(242, 212, 155, 0.55);
+
+    --serif: "Bodoni Moda", "Didot", "Bodoni MT", Georgia, serif;
+    --sans:  "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: #070B15;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The horizon: the page's one bold move. It repeats the halo already
+     baked into the logo's own SVG filter, so the mark sits in its own light. */
+  .horizon {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(58% 16% at 50% 33%, rgba(242, 212, 155, 0.16) 0%, rgba(242, 212, 155, 0.05) 45%, transparent 78%),
+      radial-gradient(88% 30% at 50% 34%, rgba(86, 142, 180, 0.42) 0%, rgba(52, 96, 131, 0.16) 46%, transparent 80%),
+      radial-gradient(150% 62% at 50% 30%, rgba(31, 62, 94, 0.55) 0%, transparent 68%),
+      linear-gradient(180deg, #05080F 0%, #0B1324 24%, #15213A 35%, #0A1120 62%, #070B15 100%);
+    animation: dawn 1400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  @keyframes dawn {
+    from { opacity: 0; transform: scale(1.06) translateY(2%); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(3rem, 8vh, 5.5rem);
+    padding: clamp(2.5rem, 7vh, 5rem) clamp(1.25rem, 5vw, 3rem);
+  }
+
+  .mark {
+    text-align: center;
+    animation: rise 1100ms 220ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  /* Emblem left, wordmark right, optically centered on each other —
+     the emblem source is 80x80, so it is capped before it can soften. */
+  .lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.875rem, 1.8vw, 1.5rem);
+  }
+
+  .lockup .emblem {
+    display: block;
+    width: clamp(72px, 8vw, 108px);
+    height: auto;
+    flex: none;
+  }
+
+  .lockup .wordmark {
+    display: block;
+    width: clamp(196px, 22vw, 292px);
+    height: auto;
+  }
+
+  .mark p {
+    margin: clamp(1.25rem, 3vh, 2rem) auto 0;
+    max-width: 34ch;
+    color: var(--text-dim);
+    font-size: 1.0625rem;
+    letter-spacing: 0.01em;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* One band, divided — not four separate cards. The panes stay transparent
+     so the horizon light carries straight through them. */
+  .options {
+    width: 100%;
+    max-width: 1040px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    animation: rise 1100ms 460ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  .option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: clamp(1.75rem, 3.6vw, 2.5rem) 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 260ms ease;
+  }
+
+  .option + .option { border-left: 1px solid var(--rule); }
+
+  .option::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: radial-gradient(80% 70% at 50% 50%, rgba(242, 212, 155, 0.14), transparent 70%);
+    transition: opacity 300ms ease;
+    pointer-events: none;
+  }
+
+  .option:hover,
+  .option:focus-visible { background-color: rgba(47, 90, 121, 0.14); }
+
+  .option:hover::after,
+  .option:focus-visible::after { opacity: 1; }
+
+  .option:focus-visible {
+    outline: 2px solid var(--dawn);
+    outline-offset: -2px;
+  }
+
+  .numeral {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.75rem, 6vw, 4rem);
+    line-height: 1;
+    color: var(--text);
+    opacity: 0.62;
+    transition: color 260ms ease, opacity 260ms ease;
+  }
+
+  .option:hover .numeral,
+  .option:focus-visible .numeral {
+    color: var(--dawn);
+    opacity: 1;
+  }
+
+  .label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    transition: color 260ms ease;
+  }
+
+  .option:hover .label,
+  .option:focus-visible .label { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .options { grid-template-columns: repeat(2, 1fr); }
+    .option:nth-child(odd) { border-left: none; }
+    .option:nth-child(n + 3) { border-top: 1px solid var(--rule); }
+  }
+
+  @media (max-width: 520px) {
+    .lockup { flex-direction: column; gap: 1rem; }
+    .lockup .emblem { width: 84px; }
+    .lockup .wordmark { width: min(260px, 72vw); }
+  }
+
+  @media (max-width: 420px) {
+    .options { grid-template-columns: 1fr; }
+    .option {
+      border-left: none;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 1.25rem;
+      padding: 1.375rem 1.25rem;
+    }
+    .option + .option { border-top: 1px solid var(--rule); }
+    /* Fixed numeral column so the numbers and labels align down the list. */
+    .numeral { font-size: 2.125rem; width: 1.4em; text-align: center; flex: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .horizon, .mark, .options { animation: none; }
+    * { transition-duration: 1ms !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="horizon" aria-hidden="true"></div>
+
+  <main>
+    <div class="mark">
+      <div class="lockup">
+        <img class="emblem" src="assets/the-way-to-happiness-logo_en.png" alt="">
+        <img class="wordmark" src="assets/the-way-to-happiness.svg" alt="The Way to Happiness — a common sense guide to better living">
+      </div>
+      <p>Choose where to begin.</p>
+    </div>
+
+    <nav class="options" aria-label="Sections">
+      <a class="option" href="option-1.html">
+        <span class="numeral" aria-hidden="true">1</span>
+        <span class="label">Option 1</span>
+      </a>
+      <a class="option" href="option-2.html">
+        <span class="numeral" aria-hidden="true">2</span>
+        <span class="label">Option 2</span>
+      </a>
+      <a class="option" href="option-3.html">
+        <span class="numeral" aria-hidden="true">3</span>
+        <span class="label">Option 3</span>
+      </a>
+      <a class="option" href="option-4.html">
+        <span class="numeral" aria-hidden="true">4</span>
+        <span class="label">Option 4</span>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>

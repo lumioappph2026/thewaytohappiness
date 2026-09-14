@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Way to Happiness — A common sense guide to better living</title>
+<meta name="description" content="The first moral code based wholly on common sense. 21 precepts that point the way to a better, happier and more fulfilling life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   OPTION 4 — "Open"
+   Centred, soft and approachable. Rounded cards on a pale blue
+   ground, and a real 3D coverflow for the gallery.
+   ============================================================ */
+
+:root {
+  /* Azure — the lightest, friendliest blue of the four */
+  --navy-950: #0A2246;
+  --navy-900: #0F3260;
+  --navy-700: #2463A8;
+
+  /* Apricot — soft and light, to match the rounded shapes */
+  --ember:       #EE9A4D;
+  --ember-solid: #AA5A18;   /* 5.0:1 with white */
+  --ember-wash:  #FDF2E7;
+
+  --white: #FFFFFF;
+  --sky:   #EAF1FA;
+  --sky-2: #DDE9F6;
+  --ink:   #0F3260;
+  --slate: #445D7E;
+  --line:  #D7E3F1;
+
+  --onnavy:     #D3E2F3;
+  --onnavy-dim: #94AECC;
+
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --wrap: 1180px;
+  --r: 30px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+body {
+  margin: 0;
+  background: var(--navy-900);
+  color: var(--slate);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0; }
+
+h1, h2, h3 { margin: 0; color: var(--ink); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+
+.wrap {
+  width: 100%; max-width: var(--wrap); margin: 0 auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem); padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* White sheets laid on the blue page — the blue shows between them */
+.band {
+  background: var(--white);
+  border-radius: 30px;
+  margin: clamp(0.5rem, 1.1vw, 0.875rem) clamp(0.75rem, 2vw, 1.5rem);
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+.band--white { background: var(--white); }
+.band--sky { background: var(--sky); }
+/* the navy band merges into the page rather than sitting on it */
+.band--navy { background: transparent; color: var(--onnavy); margin-left: 0; margin-right: 0; border-radius: 0; }
+.band--navy h2, .band--navy h3 { color: var(--white); }
+
+.h-xl { font-size: clamp(2.75rem, 5.9vw, 4.5rem); line-height: 1.04; letter-spacing: -0.045em; }
+.h-lg { font-size: clamp(2.125rem, 3.9vw, 3.125rem); letter-spacing: -0.038em; }
+.h-md { font-size: clamp(1.1875rem, 1.7vw, 1.375rem); letter-spacing: -0.02em; }
+
+.lede { font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.65; max-width: 56ch; }
+
+/* pill label — soft, rounded, part of this design's voice */
+.pill {
+  display: inline-block; padding: 0.4375rem 1.0625rem; border-radius: 999px;
+  background: linear-gradient(180deg, #FEF7EE 0%, var(--ember-wash) 100%);
+  box-shadow: inset 0 0 0 1px rgba(170, 90, 24, 0.14);
+  color: var(--ember-solid);
+  font-size: 0.875rem; font-weight: 700; letter-spacing: 0.01em;
+  margin-bottom: 1.125rem;
+}
+.band--navy .pill { background: rgba(238, 154, 77, 0.2); color: var(--ember); }
+
+.center { text-align: center; }
+.center .lede { margin-left: auto; margin-right: auto; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1rem 1.875rem; border: 2px solid transparent; border-radius: 999px;
+  font: inherit; font-size: 1.0625rem; font-weight: 700; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  transition: background-color 180ms var(--ease), color 180ms var(--ease),
+              border-color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+.btn--primary {
+  background: linear-gradient(180deg, #C36A1E 0%, var(--ember-solid) 52%, #90480F 100%);
+  border-color: var(--ember-solid); color: var(--white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 12px 28px -10px rgba(170, 90, 24, 0.75);
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 20px 38px -10px rgba(170, 90, 24, 0.85);
+}
+.btn--soft { background: var(--white); border-color: var(--line); color: var(--ink); }
+.btn--soft:hover { border-color: var(--ink); transform: translateY(-2px); }
+.btn--onnavy { border-color: rgba(212, 225, 240, 0.45); color: var(--white); }
+.btn--onnavy:hover { background: var(--white); border-color: var(--white); color: var(--navy-900); }
+.btn--sm { padding: 0.625rem 1.25rem; font-size: 0.9375rem; }
+
+:where(a, button, input, [tabindex]):focus-visible { outline: 3px solid var(--ember-solid); outline-offset: 3px; border-radius: 999px; }
+
+.tlink {
+  font-weight: 700; color: var(--ember-solid); text-decoration: none;
+  border-bottom: 2px solid rgba(170, 90, 24, 0.3); padding-bottom: 2px;
+  transition: border-color 180ms var(--ease);
+}
+.tlink:hover { border-bottom-color: var(--ember-solid); }
+.band--navy .tlink, .foot .tlink { color: var(--ember); border-bottom-color: rgba(238, 154, 77, 0.5); }
+
+/* ============================================================
+   NAV — a floating rounded bar
+   ============================================================ */
+.navwrap { position: sticky; top: 0; z-index: 60; padding: 0.875rem 0; background: var(--navy-900); }
+.nav {
+  display: flex; align-items: center; gap: 1.5rem;
+  background: var(--navy-900); border-radius: 999px;
+  padding: 0.625rem 0.75rem 0.625rem 1.25rem;
+}
+.nav__brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; flex: none; }
+.nav__brand .emblem { width: 38px; height: 38px; }
+.nav__brand .wordmark { width: 134px; }
+.nav__links { display: flex; align-items: center; gap: clamp(0.75rem, 1.7vw, 1.625rem); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.nav__links a { color: var(--onnavy); text-decoration: none; font-size: 0.9375rem; font-weight: 600; white-space: nowrap; transition: color 160ms var(--ease); }
+.nav__links a:hover { color: var(--ember); }
+.nav__toggle {
+  display: none; margin-left: auto; background: none; border: 1px solid rgba(212, 225, 240, 0.3);
+  border-radius: 999px; padding: 0.5rem 1rem; color: var(--white); font: inherit; font-weight: 600; cursor: pointer;
+}
+@media (max-width: 1040px) {
+  .nav__links { display: none; }
+  .nav__toggle { display: block; }
+  .nav--open { flex-wrap: wrap; border-radius: 24px; }
+  .nav--open .nav__links { display: flex; flex-direction: column; align-items: stretch; gap: 0; width: 100%; margin: 0.75rem 0 0.5rem; }
+  .nav--open .nav__links a { padding: 0.75rem 0.5rem; font-size: 1.0625rem; }
+  .nav--open .nav__links .btn { margin-top: 0.5rem; }
+}
+
+/* ============================================================
+   HERO — a photograph held in a card, the way the reference does
+   ============================================================ */
+.hero { padding: 0 clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.1vw, 0.875rem); }
+
+.showcase {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  min-height: clamp(420px, 56vw, 620px);
+  display: flex; align-items: flex-end;
+  background: var(--navy-950);
+}
+.showcase > img.showcase__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.showcase::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10, 34, 70, 0.6) 0%, rgba(10, 34, 70, 0.25) 38%, rgba(10, 34, 70, 0.9) 100%);
+}
+.showcase__body {
+  position: relative; z-index: 2; width: 100%;
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+  text-align: center;
+}
+.showcase__body .pill { background: rgba(255, 255, 255, 0.16); color: var(--white); box-shadow: none; }
+.showcase h1 { color: var(--white); max-width: 18ch; margin: 0 auto; }
+.showcase h1 em { font-style: normal; color: var(--ember); }
+.showcase__lede { margin: 1.25rem auto 0; color: var(--onnavy); font-size: clamp(1.0625rem, 1.4vw, 1.25rem); max-width: 52ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.875rem; justify-content: center; margin-top: 2rem; }
+
+/* the booklet leans on the corner of the card, keeping the 3D */
+.showcase > img.showcase__book {
+  position: absolute; right: clamp(1rem, 3vw, 3rem); bottom: 0; z-index: 3;
+  width: clamp(120px, 17vw, 230px); height: auto;
+  transform: rotateY(-10deg) rotateX(3deg);
+  transform-origin: bottom center;
+  transition: transform 420ms var(--ease);
+  filter: drop-shadow(0 18px 26px rgba(10, 34, 70, 0.6));
+}
+@media (max-width: 720px) { .showcase__book { display: none; } }
+
+.stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; max-width: 760px; margin: clamp(2rem, 4vw, 3rem) auto 0;
+}
+.stats > div {
+  position: relative; overflow: hidden; text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBFDFF 100%);
+  border-radius: 22px; padding: 1.5rem 1rem;
+  box-shadow: 0 1px 2px rgba(15, 50, 96, 0.04), 0 18px 34px -26px rgba(36, 99, 168, 0.55);
+}
+.stats > div::before {
+  content: ""; position: absolute; top: 0; left: 22%; right: 22%; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+}
+.stats b {
+  display: block;
+  font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 800;
+  color: var(--ink); letter-spacing: -0.04em; line-height: 1.15;
+}
+.stats span { font-size: 0.9375rem; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--white); border-radius: var(--r);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+.card--flat { box-shadow: 0 1px 2px rgba(15, 50, 96, 0.04), 0 22px 44px -28px rgba(15, 50, 96, 0.45); }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 1.5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+@media (max-width: 780px) { .grid2 { grid-template-columns: 1fr; } }
+
+.card h3 { margin-bottom: 0.75rem; }
+.card p { font-size: 1.0625rem; margin-bottom: 1.5rem; }
+
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 860px) { .duo { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   COVERFLOW — a real 3D carousel
+   ============================================================ */
+.flow {
+  position: relative;
+  /* height follows the card's own 16:10 box, plus room for the shadow */
+  height: calc(clamp(240px, 38vw, 520px) * 0.625 + 70px);
+  perspective: 1700px;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.flow__track { position: absolute; inset: 0; transform-style: preserve-3d; }
+/* a soft floor under the front card sells the perspective */
+.flow::after {
+  content: ""; position: absolute; left: 50%; bottom: 8px;
+  width: clamp(240px, 38vw, 520px); height: 34px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(10, 34, 70, 0.28), transparent 72%);
+  filter: blur(10px); pointer-events: none;
+}
+
+.flow__item {
+  position: absolute; top: 50%; left: 50%;
+  width: clamp(240px, 38vw, 520px);
+  border: none; padding: 0; cursor: pointer;
+  background: var(--white);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 26px 50px -22px rgba(10, 34, 70, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.8), 0 0 0 2px rgba(15, 50, 96, 0.06);
+  transition: transform 520ms var(--ease), opacity 520ms var(--ease), filter 520ms var(--ease);
+  will-change: transform;
+}
+.flow__item img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.flow__item[aria-current="false"] { filter: brightness(0.94); }
+/* only the card in front offers to play — the rest would just be clutter */
+.flow__item[aria-current="false"] .flow__play,
+.flow__item[aria-current="false"] .flow__tag { opacity: 0; transition: opacity 300ms var(--ease); }
+.flow__item[aria-current="false"]:hover { filter: brightness(1); }
+
+.flow__tag {
+  position: absolute; left: 12px; top: 12px;
+  background: var(--white); color: var(--navy-900);
+  font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.05em;
+  padding: 4px 10px; border-radius: 999px;
+}
+.flow__play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94); display: grid; place-items: center;
+}
+.flow__play svg { width: 21px; height: 21px; margin-left: 3px; fill: var(--navy-900); }
+
+.flow__caption { text-align: center; margin-top: clamp(1.25rem, 2.5vw, 2rem); min-height: 4.5rem; }
+.flow__caption h3 { font-size: clamp(1.1875rem, 1.8vw, 1.5rem); }
+.flow__caption p { margin-top: 0.25rem; }
+
+.flow__nav { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.fbtn {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--white); border: 2px solid var(--line); color: var(--ink); cursor: pointer;
+  transition: background-color 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease);
+}
+.fbtn:hover { background: var(--navy-900); border-color: var(--navy-900); color: var(--white); }
+.fbtn svg { width: 18px; height: 18px; }
+.fdots { display: flex; gap: 0.5rem; }
+.fdot { width: 9px; height: 9px; border-radius: 50%; border: none; padding: 0; background: #B2C7DF; cursor: pointer; transition: background-color 200ms var(--ease), transform 200ms var(--ease); }
+.fdot[aria-current="true"] { background: var(--ember-solid); transform: scale(1.35); }
+
+/* ============================================================
+   PRECEPTS — soft chips
+   ============================================================ */
+.chips { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: clamp(2rem, 4vw, 3rem); perspective: 900px; }
+.chip {
+  display: inline-flex; align-items: baseline; gap: 0.625rem;
+  background: var(--white); border-radius: 999px;
+  padding: 0.875rem 1.5rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: border-color 200ms var(--ease), transform 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.chip:hover, .chip:focus-visible {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--ember-wash) 100%);
+  border-color: var(--ember);
+  transform: translateZ(30px) rotateX(9deg);
+  box-shadow: 0 20px 30px -16px rgba(15, 50, 96, 0.55);
+}
+.chip b { font-size: 0.9375rem; font-weight: 800; color: var(--ember-solid); }
+.chip span { font-size: 1rem; font-weight: 600; color: var(--ink); }
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.appstore {
+  display: inline-flex; align-items: center; gap: 0.6875rem;
+  padding: 0.5625rem 1.25rem 0.625rem; border: 2px solid var(--line); border-radius: 999px;
+  color: var(--ink); text-decoration: none; background: var(--white);
+  transition: border-color 180ms var(--ease);
+}
+.appstore:hover { border-color: var(--ink); }
+.appstore svg { width: 23px; height: 23px; fill: currentColor; flex: none; }
+.appstore > span {
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+.appstore .small {
+  display: block;
+  font-size: 0.6875rem; line-height: 1.15;
+  letter-spacing: 0.01em; opacity: 0.75;
+}
+.appstore b {
+  display: block;
+  font-weight: 800;
+  font-size: 1.0625rem; line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 1px;
+}
+
+.round-img { border-radius: var(--r); overflow: hidden; }
+.round-img img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.signup__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.signup form { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.signup input {
+  min-width: 280px; padding: 1rem 1.375rem; border-radius: 999px;
+  border: 2px solid var(--line); background: var(--white);
+  font: inherit; font-size: 1.0625rem; color: var(--ink);
+}
+.signup input:focus { border-color: var(--ink); outline: none; }
+.signup .decline { background: none; border: none; font: inherit; color: var(--slate); text-decoration: underline; cursor: pointer; }
+
+.foot { background: transparent; color: var(--onnavy-dim); padding: clamp(3.5rem, 6vw, 5rem) 0 2rem; }
+.foot a { color: var(--onnavy); text-decoration: none; transition: color 160ms var(--ease); }
+.foot a:hover { color: var(--ember); }
+.foot__top { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); padding-bottom: 3rem; border-bottom: 1px solid rgba(190, 214, 240, 0.2); }
+.foot__brand .lockup { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.foot__brand .emblem { width: 44px; height: 44px; }
+.foot__brand .wordmark { width: 150px; }
+.foot__brand p { font-size: 0.9375rem; margin-bottom: 1.25rem; max-width: 50ch; }
+.foot h4 { color: var(--white); font-size: 1rem; margin: 0 0 1.125rem; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { margin-bottom: 0.625rem; font-size: 0.9375rem; }
+.foot__langs { padding: 2.5rem 0; border-bottom: 1px solid rgba(190, 214, 240, 0.2); }
+.foot__langs ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.375rem; }
+.foot__langs li { margin: 0; font-size: 0.875rem; }
+.foot__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; padding-top: 2rem; font-size: 0.8125rem; }
+.foot__legal ul { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.foot__legal li { margin: 0; font-size: 0.8125rem; }
+@media (max-width: 860px) { .foot__top { grid-template-columns: 1fr; } }
+
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="navwrap">
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <a class="nav__brand" href="#top" aria-label="The Way to Happiness — home">
+        <img class="emblem" src="assets/the-way-to-happiness-logo_en.png" alt="">
+        <img class="wordmark" src="assets/the-way-to-happiness.svg" alt="The Way to Happiness">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About us</a></li>
+        <li><a href="#precepts">The 21 precepts</a></li>
+        <li><a href="#programs">Programs &amp; results</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#course">Free course</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a class="btn btn--primary btn--sm" href="#order">Order</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="showcase" id="stage">
+    <img class="showcase__photo" src="assets/photos/hero-road.jpg" width="1800" height="1000" alt="A road at sunrise">
+    <img class="showcase__book" id="booklet" src="assets/twth-booklet-stack.webp" width="900" height="809"
+         alt="The Way to Happiness booklet, shown with a stack of copies">
+    <div class="showcase__body">
+      <span class="pill">A common sense guide to better living</span>
+      <h1 class="h-xl">Learn it. Live it. <em>Share it.</em></h1>
+      <p class="showcase__lede">
+        The first moral code based wholly on common sense. Twenty-one precepts
+        that point the way to a better, happier and more fulfilling life.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#order">Order your copies</a>
+        <a class="btn btn--soft" href="#videos">See the video</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="band band--white" id="about">
+  <div class="wrap">
+    <div class="stats" style="margin-top:0; margin-bottom:clamp(2.5rem,5vw,4rem);">
+      <div><b>21</b><span>Precepts</span></div>
+      <div><b>100+</b><span>Languages</span></div>
+      <div><b>1981</b><span>First published</span></div>
+    </div>
+
+    <div class="duo">
+      <div>
+        <span class="pill">About</span>
+        <h2 class="h-lg">What is The Way to Happiness?</h2>
+        <p class="lede" style="margin-top:1.25rem;">
+          The first moral code based wholly on common sense, originally published
+          in 1981, its purpose is to help arrest the current moral decline in
+          society and restore integrity and trust to Man.
+        </p>
+        <p style="margin-top:1.75rem;"><a class="tlink" href="#videos">See the video</a></p>
+      </div>
+      <div class="card" style="background:var(--sky);">
+        <p style="color:var(--ink);">
+          The mission of The Way to Happiness Foundation International is to
+          reverse the moral decay of society by restoring trust and honesty the
+          world over through the publication and widespread distribution of
+          <em>The Way to Happiness</em>, a common sense guide to better living.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COVERFLOW ================= -->
+<section class="band" id="videos">
+  <div class="wrap center">
+    <span class="pill">Watch</span>
+    <h2 class="h-lg">Videos &amp; images</h2>
+    <p class="lede" style="margin-top:1rem;">
+      Public service announcements for the precepts, the full film, and pictures
+      from distribution teams around the world.
+    </p>
+  </div>
+
+  <div class="flow" id="flow" role="region" aria-roledescription="carousel" aria-label="Videos and images" tabindex="0">
+    <div class="flow__track" id="flowTrack"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="flow__caption">
+      <h3 id="flowTitle">The Way to Happiness — the film</h3>
+      <p id="flowSub">The 21 precepts, dramatised</p>
+    </div>
+    <div class="flow__nav">
+      <button class="fbtn" id="fprev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg>
+      </button>
+      <div class="fdots" id="fdots"></div>
+      <button class="fbtn" id="fnext" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECEPTS ================= -->
+<section class="band band--white" id="precepts">
+  <div class="wrap">
+    <span class="pill">The precepts</span>
+    <h2 class="h-lg">Twenty-one precepts for better living</h2>
+    <p class="lede" style="margin-top:1rem;">
+      Each one stands on its own, and each one rests on common sense. Read them,
+      use them, and pass them on.
+    </p>
+
+    <div class="chips" style="background:var(--sky); padding:clamp(1.25rem,3vw,2rem); border-radius:var(--r);">
+      <a class="chip" href="#precepts"><b>1</b><span>Take Care of Yourself</span></a>
+      <a class="chip" href="#precepts"><b>2</b><span>Be Temperate</span></a>
+      <a class="chip" href="#precepts"><b>3</b><span>Don't Be Promiscuous</span></a>
+      <a class="chip" href="#precepts"><b>4</b><span>Love and Help Children</span></a>
+      <a class="chip" href="#precepts"><b>5</b><span>Honor and Help Your Parents</span></a>
+      <a class="chip" href="#precepts"><b>6</b><span>Set a Good Example</span></a>
+      <a class="chip" href="#precepts"><b>7</b><span>Seek to Live With the Truth</span></a>
+      <a class="chip" href="#precepts"><b>8</b><span>Do Not Murder</span></a>
+      <a class="chip" href="#precepts"><b>9</b><span>Don't Do Anything Illegal</span></a>
+      <a class="chip" href="#precepts"><b>10</b><span>Support a Government Designed and Run for All the People</span></a>
+      <a class="chip" href="#precepts"><b>11</b><span>Do Not Harm a Person of Good Will</span></a>
+      <a class="chip" href="#precepts"><b>12</b><span>Safeguard and Improve Your Environment</span></a>
+      <a class="chip" href="#precepts"><b>13</b><span>Do Not Steal</span></a>
+      <a class="chip" href="#precepts"><b>14</b><span>Be Worthy of Trust</span></a>
+      <a class="chip" href="#precepts"><b>15</b><span>Fulfill Your Obligations</span></a>
+      <a class="chip" href="#precepts"><b>16</b><span>Be Industrious</span></a>
+      <a class="chip" href="#precepts"><b>17</b><span>Be Competent</span></a>
+      <a class="chip" href="#precepts"><b>18</b><span>Respect the Religious Beliefs of Others</span></a>
+      <a class="chip" href="#precepts"><b>19</b><span>Try Not to Do Things to Others That You Would Not Like Them to Do to You</span></a>
+      <a class="chip" href="#precepts"><b>20</b><span>Try to Treat Others as You Would Want Them to Treat You</span></a>
+      <a class="chip" href="#precepts"><b>21</b><span>Flourish and Prosper</span></a>
+      <a class="chip" href="#precepts"><b>&sect;</b><span>Epilogue</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KITS ================= -->
+<section class="band" id="programs">
+  <div class="wrap">
+    <div class="center">
+      <span class="pill">Programs</span>
+      <h2 class="h-lg">Free tools &amp; programs</h2>
+      <p class="lede" style="margin-top:1rem;">
+        Educators, businesses and correctional professionals each get a kit built
+        for their setting, with everything needed to guide others toward a better
+        quality of life.
+      </p>
+    </div>
+
+    <div class="grid3">
+      <div class="card card--flat">
+        <h3 class="h-md">For educators</h3>
+        <p>Trust, honesty and respect are attributes worth fostering in any classroom. The educator's kit shows you how.</p>
+        <a class="btn btn--primary btn--sm" href="#order">Request now</a>
+      </div>
+      <div class="card card--flat">
+        <h3 class="h-md">For businesses</h3>
+        <p>Employee theft, dishonesty, substance abuse and staff turnover are symptoms of a moral crisis — and they can be addressed.</p>
+        <a class="btn btn--primary btn--sm" href="#order">Request now</a>
+      </div>
+      <div class="card card--flat">
+        <h3 class="h-md">For corrections</h3>
+        <p>There is a way to decrease crime and recidivism effectively — a program that restores self-respect and self-worth, so inmates and parolees become contributing members of society who will not return to crime.</p>
+        <a class="btn btn--primary btn--sm" href="#order">Request now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTOM EDITIONS ================= -->
+<section class="band band--white" id="order">
+  <div class="wrap">
+    <div class="duo">
+      <div class="round-img">
+        <img src="assets/thumbs/02-languages.jpg" width="1200" height="750" loading="lazy" alt="The booklet shown with a stack of copies">
+      </div>
+      <div>
+        <span class="pill">Order</span>
+        <h2 class="h-lg">Each person has an effect on someone else — positive or negative.</h2>
+        <p class="lede" style="margin-top:1.25rem;">
+          Put your own name, message or organisation on the cover. Custom
+          editions are printed on demand in Glendale, California, in over 100
+          languages, so the copies you hand out speak for you.
+        </p>
+        <p style="margin-top:2rem;"><a class="btn btn--primary" href="#order">Make your own custom edition</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COURSE ================= -->
+<section class="band" id="course">
+  <div class="wrap center">
+    <span class="pill">Learn</span>
+    <h2 class="h-lg">Free online course</h2>
+    <p class="lede" style="margin-top:1rem;">
+      Take a free online course and learn to use all 21 precepts in your daily
+      life. It points the way to a better, happier and more fulfilling life for
+      you and those around you.
+    </p>
+  </div>
+  <div class="wrap">
+    <div class="grid2">
+      <div class="card card--flat">
+        <h3 class="h-md">Enrol and start today</h3>
+        <p>Twenty-one lessons, one precept at a time, at whatever pace suits you. There is no cost and no obligation.</p>
+        <a class="btn btn--primary" href="#course">Enroll now</a>
+      </div>
+      <div class="card card--flat">
+        <h3 class="h-md">The education app</h3>
+        <p>Review and grade your students' lessons right from your phone, fully synchronised with your other mobile devices.</p>
+        <a class="appstore" href="#course">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.42 2.2-1.12 3-.77.88-2.02 1.56-3.06 1.47-.13-1.1.42-2.25 1.1-3.02.77-.88 2.11-1.53 3.08-1.45zM20.9 17.02c-.55 1.28-.82 1.85-1.53 2.98-.99 1.58-2.39 3.55-4.12 3.56-1.54.02-1.93-1-4.02-.99-2.09.01-2.52 1.01-4.06.99-1.73-.02-3.05-1.79-4.04-3.37C.36 15.77-.02 10.6 1.83 7.9c1.3-1.93 3.35-3.06 5.28-3.06 1.96 0 3.2 1.08 4.82 1.08 1.58 0 2.54-1.08 4.81-1.08 1.71 0 3.53.94 4.82 2.55-4.24 2.32-3.55 8.37.34 9.63z"/></svg>
+          <span><span class="small">Download on the</span><b>App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECEPT OF THE DAY ================= -->
+<section class="band band--navy">
+  <div class="wrap center">
+    <span class="pill">Precept of the day</span>
+    <h2 class="h-lg">1. Take care of yourself</h2>
+    <div class="hero__actions" style="margin-top:2rem;">
+      <a class="btn btn--primary" href="#videos">Watch the PSA</a>
+      <a class="btn btn--onnavy" href="#precepts">Read it</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GET INVOLVED ================= -->
+<section class="band band--white" id="news">
+  <div class="wrap">
+    <div class="center">
+      <span class="pill">Take part</span>
+      <h2 class="h-lg">Get involved</h2>
+    </div>
+    <div class="grid3">
+      <div class="card" style="background:var(--sky);">
+        <h3 class="h-md">Education</h3>
+        <p>Learn to use all 21 precepts in your daily life. It points the way to a better, happier and more fulfilling life for you and those around you.</p>
+        <a class="tlink" href="#course">Enroll now</a>
+      </div>
+      <div class="card" style="background:var(--sky);">
+        <h3 class="h-md">Join a team</h3>
+        <p>There are The Way to Happiness chapters all over the world. To join a local chapter or start your own, contact us.</p>
+        <a class="tlink" href="#news">Join a team</a>
+      </div>
+      <div class="card" style="background:var(--sky);">
+        <h3 class="h-md">Learn it. Live it. Share it.</h3>
+        <p>Start spreading happiness right in your own home, workplace or community.</p>
+        <a class="tlink" href="#order">Order your copies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIGNUP ================= -->
+<section class="band" style="padding-top:clamp(2.5rem,5vw,3.5rem); padding-bottom:clamp(2.5rem,5vw,3.5rem);">
+  <div class="wrap">
+    <div class="card card--flat signup">
+      <div class="signup__inner">
+        <h2 class="h-md" style="max-width:18ch;">Sign up for news and updates</h2>
+        <form onsubmit="return false;">
+          <label class="vh" for="email">Email address</label>
+          <input id="email" type="email" placeholder="Your email address" required>
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+          <button type="button" class="decline">No thanks</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <div class="lockup">
+          <img class="emblem" src="assets/the-way-to-happiness-logo_en.png" alt="">
+          <img class="wordmark" src="assets/the-way-to-happiness.svg" alt="The Way to Happiness">
+        </div>
+        <p>
+          The Way to Happiness Foundation is a purely secular charitable
+          organization, coordinated by the Association for Better Living and
+          Education (ABLE), an organization dedicated to resolving the major
+          societal ills of drugs, crime, illiteracy and immorality.
+        </p>
+        <a class="tlink" href="#about">Learn more</a>
+      </div>
+      <div>
+        <h4>The foundation</h4>
+        <ul>
+          <li><a href="#about">About us</a></li><li><a href="#precepts">The 21 precepts</a></li>
+          <li><a href="#programs">Programs &amp; results</a></li><li><a href="#order">Order</a></li>
+          <li><a href="#news">News</a></li><li><a href="#news">Contact</a></li><li><a href="#news">Sitemap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn &amp; use</h4>
+        <ul>
+          <li><a href="#course">Education</a></li><li><a href="#course">The Way to Happiness app</a></li>
+          <li><a href="#videos">Videos</a></li><li><a href="#order">Custom editions</a></li>
+          <li><a href="#programs">Information kits</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__langs">
+      <h4>International sites</h4>
+      <ul>
+        <li><a href="#">English (US)</a></li><li><a href="#">English (International)</a></li>
+        <li><a href="#">English (Canadian)</a></li><li><a href="#">English (New Zealand)</a></li>
+        <li><a href="#">English (South Africa)</a></li><li><a href="#">Dansk</a></li>
+        <li><a href="#">Nederlands</a></li><li><a href="#">Français</a></li>
+        <li><a href="#">Deutsch</a></li><li><a href="#">Ελληνικά</a></li>
+        <li><a href="#">עברית</a></li><li><a href="#">Magyar</a></li>
+        <li><a href="#">Italiano</a></li><li><a href="#">日本語</a></li>
+        <li><a href="#">Norsk</a></li><li><a href="#">Português</a></li>
+        <li><a href="#">Русский</a></li><li><a href="#">Español (Latinoamérica)</a></li>
+        <li><a href="#">Español (Castellano)</a></li><li><a href="#">Svenska</a></li>
+        <li><a href="#">中文</a></li><li><a href="#">العربية</a></li>
+      </ul>
+    </div>
+
+    <div class="foot__legal">
+      <p>© 1996–2026 The Way to Happiness Foundation International. All Rights Reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Notice</a></li><li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Terms of Use</a></li><li><a href="#">Legal Notice</a></li>
+        <li><a href="index.html">Back to options</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Menu ---------- */
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('nav--open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  document.getElementById('navLinks').addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('nav--open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  /* ---------- Booklet tilt ---------- */
+  var stage = document.getElementById('stage');
+  var booklet = document.getElementById('booklet');
+  if (!reduce && stage && window.matchMedia('(pointer: fine)').matches) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, ticking = false;
+    var frame = function () {
+      cx += (tx - cx) * 0.09; cy += (ty - cy) * 0.09;
+      booklet.style.transform = 'rotateY(' + (-10 + cx * 16) + 'deg) rotateX(' + (3 - cy * 8) + 'deg)';
+      if (Math.abs(tx - cx) > 0.001 || Math.abs(ty - cy) > 0.001) requestAnimationFrame(frame); else ticking = false;
+    };
+    stage.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width - 0.5;
+      ty = (e.clientY - r.top) / r.height - 0.5;
+      if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+    });
+    stage.addEventListener('pointerleave', function () { tx = 0; ty = 0; if (!ticking) { ticking = true; requestAnimationFrame(frame); } });
+  }
+
+  /* ---------- Coverflow ---------- */
+  var items = [
+    { src: 'assets/thumbs/01-film.jpg',        kind: 'Video', title: 'The Way to Happiness — the film',                     sub: 'The 21 precepts, dramatised',           alt: 'Key art for the film: a sunlit meadow with a winding path' },
+    { src: 'assets/thumbs/02-languages.jpg',   kind: 'Image', title: 'Printed in over 100 languages',                       sub: 'Print-on-demand, Glendale, California',  alt: 'The booklet shown with a stack of copies' },
+    { src: 'assets/thumbs/03-take-care.jpg',   kind: 'Video', title: 'Precept 1: Take care of yourself',                    sub: 'Public service announcement',            alt: 'A young man brushing his teeth' },
+    { src: 'assets/thumbs/04-classroom.jpg',   kind: 'Image', title: "The educator's kit in the classroom",                 sub: 'Trust, honesty and respect',             alt: "The educator's kit, with guide, booklets and DVD" },
+    { src: 'assets/thumbs/05-environment.jpg', kind: 'Video', title: 'Precept 12: Safeguard and improve your environment',   sub: 'Public service announcement',            alt: 'A young man outdoors' },
+    { src: 'assets/thumbs/06-volunteers.jpg',  kind: 'Video', title: 'Precept 6: Set a good example',                        sub: 'Public service announcement',            alt: 'A child looking on' }
+  ];
+
+  var track = document.getElementById('flowTrack');
+  var dotsBox = document.getElementById('fdots');
+  var title = document.getElementById('flowTitle');
+  var sub = document.getElementById('flowSub');
+  var flow = document.getElementById('flow');
+  var active = 0;
+
+  items.forEach(function (it, i) {
+    var b = document.createElement('button');
+    b.className = 'flow__item';
+    b.type = 'button';
+    b.setAttribute('aria-label', it.kind + ': ' + it.title);
+    b.innerHTML = '<span class="flow__tag">' + it.kind + '</span>' +
+      '<img src="' + it.src + '" alt="' + it.alt + '" width="1200" height="750"' + (i ? ' loading="lazy"' : '') + '>' +
+      (it.kind === 'Video' ? '<span class="flow__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : '');
+    b.addEventListener('click', function () { go(i); });
+    track.appendChild(b);
+
+    var d = document.createElement('button');
+    d.className = 'fdot';
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Go to item ' + (i + 1) + ' of ' + items.length);
+    d.addEventListener('click', function () { go(i); });
+    dotsBox.appendChild(d);
+  });
+
+  var cards = [].slice.call(track.children);
+  var dots = [].slice.call(dotsBox.children);
+
+  var n = items.length;
+
+  function layout() {
+    cards.forEach(function (c, i) {
+      /* wrap the offset so there are always cards on both sides of the front one */
+      var o = i - active;
+      if (o >  n / 2) o -= n;
+      if (o < -n / 2) o += n;
+      var abs = Math.abs(o);
+      var hidden = abs > 2;
+      c.style.transform =
+        'translate(-50%, -50%) ' +
+        'translateX(' + (o * 58) + '%) ' +
+        'translateZ(' + (-abs * 210) + 'px) ' +
+        'rotateY(' + (o * -34) + 'deg) ' +
+        'scale(' + (1 - abs * 0.05) + ')';
+      c.style.opacity = hidden ? '0' : '1';
+      c.style.zIndex = String(100 - abs);
+      c.style.pointerEvents = hidden ? 'none' : 'auto';
+      c.setAttribute('aria-current', String(i === active));
+      c.tabIndex = hidden ? -1 : 0;
+    });
+    dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === active)); });
+    title.textContent = items[active].title;
+    sub.textContent = items[active].sub;
+  }
+
+  function go(i) { active = ((i % n) + n) % n; layout(); }
+
+  document.getElementById('fprev').addEventListener('click', function () { go(active - 1); });
+  document.getElementById('fnext').addEventListener('click', function () { go(active + 1); });
+  flow.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(active + 1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(active - 1); }
+  });
+
+  layout();
+})();
+</script>
+
+</body>
+</html>
