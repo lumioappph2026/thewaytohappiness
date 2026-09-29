@@ -1002,6 +1002,174 @@ p { margin: 0; }
 
 @media (max-width: 860px) { .foot__top { grid-template-columns: 1fr; } }
 
+/* ============================================================
+   WHO WE ARE — the people behind the Philippine foundation
+   ============================================================ */
+.band--team {
+  position: relative;
+  background:
+    radial-gradient(70% 90% at 88% 8%, rgba(242, 160, 60, 0.08) 0%, transparent 60%),
+    radial-gradient(60% 80% at 6% 92%, rgba(27, 68, 120, 0.28) 0%, transparent 62%);
+}
+.band--team::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+}
+
+.team__kicker {
+  display: inline-flex; align-items: center; gap: 0.625rem;
+  color: var(--ember);
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.team__kicker::before { content: ""; width: 34px; height: 1px; background: var(--ember); }
+
+.team__h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+.team__sub { color: var(--onnavy-dim); font-size: 0.9375rem; }
+.team__note { margin-top: 1rem; font-size: 0.875rem; color: var(--onnavy-dim); font-style: italic; }
+
+/* The featured leader: portrait and story side by side */
+.leader {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+.leader__photo {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 1), 0 0 60px -30px var(--glow-warm);
+}
+.leader__photo img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.leader__photo::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(6, 9, 15, 0.55) 100%);
+}
+.role {
+  display: block;
+  color: var(--ember);
+  font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+.leader__name { font-size: clamp(2rem, 3.4vw, 2.75rem); letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+.leader__bio { max-width: 58ch; font-size: 1.0625rem; }
+.leader__quote {
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--ember);
+  color: var(--ink);
+  font-size: clamp(1.25rem, 1.9vw, 1.5rem);
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  max-width: 40ch;
+}
+@media (max-width: 860px) {
+  .leader { grid-template-columns: 1fr; }
+  .leader__photo { max-width: 420px; }
+}
+
+/* The two officers, as glass panes like the kits */
+.officers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+.officer {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(1.25rem, 2.4vw, 1.75rem);
+  align-items: start;
+}
+.officer img {
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--edge);
+}
+.officer h3 { margin-bottom: 0.25rem; }
+.officer .role { margin-bottom: 0.875rem; }
+.officer p { margin-bottom: 0; font-size: 1rem; }
+@media (max-width: 520px) {
+  .officer { grid-template-columns: 1fr; }
+  .officer img { max-width: 260px; }
+}
+
+/* Seven years in numbers */
+.impact { margin-top: clamp(4rem, 8vw, 6rem); }
+.impact .stats { margin-top: 1.5rem; padding-bottom: 0; gap: clamp(0.75rem, 1.6vw, 1.25rem); }
+.impact .stats > div { margin-right: 0; flex: 1 1 200px; }
+
+/* Our journey — a horizon line with a dot per year */
+.journey { margin-top: clamp(4rem, 8vw, 6rem); }
+.journey ol {
+  list-style: none; margin: 2rem 0 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  position: relative;
+}
+.journey ol::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 1px;
+  background: linear-gradient(90deg, var(--ember) 0%, rgba(242, 160, 60, 0.35) 60%, rgba(255, 255, 255, 0.12) 100%);
+}
+.journey li { position: relative; padding-top: 1.75rem; font-size: 0.9375rem; line-height: 1.55; }
+.journey li::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--void);
+  border: 2px solid var(--ember);
+  box-shadow: 0 0 12px var(--glow-warm);
+}
+.journey b { display: block; color: var(--ink); font-size: 1.25rem; letter-spacing: -0.02em; margin-bottom: 0.375rem; }
+@media (max-width: 1020px) {
+  .journey ol { grid-template-columns: 1fr; gap: 0; padding-left: 1.75rem; }
+  .journey ol::before { left: 6px; right: auto; top: 6px; bottom: 6px; width: 1px; height: auto;
+    background: linear-gradient(180deg, var(--ember) 0%, rgba(242, 160, 60, 0.35) 60%, rgba(255, 255, 255, 0.12) 100%); }
+  .journey li { padding: 0 0 1.5rem; }
+  .journey li::before { left: -1.75rem; top: 5px; }
+}
+
+/* Whom we've trained and touched — a bento of moments */
+.moments { margin-top: clamp(4rem, 8vw, 6rem); }
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(150px, 16vw, 230px);
+  grid-auto-flow: dense;
+  gap: clamp(0.625rem, 1.2vw, 1rem);
+  margin: 2rem 0 0;
+}
+.bento figure {
+  position: relative; margin: 0;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--edge);
+  background: var(--surface);
+}
+.bento img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease); }
+.bento figure:hover img { transform: scale(1.04); }
+.bento figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 2.5rem 1rem 0.875rem;
+  background: linear-gradient(180deg, transparent, rgba(6, 9, 15, 0.85));
+  color: var(--white);
+  font-size: 0.875rem; font-weight: 500; line-height: 1.35;
+}
+.bento .is-big  { grid-column: span 2; grid-row: span 2; }
+.bento .is-wide { grid-column: span 2; }
+.bento .is-tall { grid-row: span 2; }
+@media (max-width: 760px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 160px; }
+  .bento .is-tall { grid-row: span 1; }
+}
+
 /* ---------- Entrances ---------- */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 750ms var(--ease), transform 750ms var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }
@@ -1037,6 +1205,7 @@ p { margin: 0; }
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <ul class="nav__links" id="navLinks">
       <li><a href="#about">About us</a></li>
+      <li><a href="#team">Who we are</a></li>
       <li><a href="#precepts">The 21 precepts</a></li>
       <li><a href="#programs">Programs &amp; results</a></li>
       <li><a href="#videos">Videos</a></li>
@@ -1122,6 +1291,112 @@ p { margin: 0; }
         through the publication and widespread distribution of <em>The Way to
         Happiness</em>, a common sense guide to better living.
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO WE ARE ================= -->
+<!-- Placeholder photos: Unsplash (unsplash.com). Replace with foundation photos. -->
+<section class="band band--team" id="team">
+  <div class="wrap">
+    <p class="team__kicker">Who we are</p>
+    <h2 class="h-lg">The people behind TWTH Philippine Foundation, Inc.</h2>
+    <div class="rule"></div>
+    <p class="lede">
+      For seven years we have carried The Way to Happiness into classrooms,
+      barangays, correctional facilities and workplaces across the Philippines —
+      one person, one precept, one community at a time.
+    </p>
+
+    <div class="leader">
+      <div class="leader__photo">
+        <img src="assets/photos/team/lead.jpg" width="800" height="1000" alt="Portrait of [Founder Name], Founder and Country Director">
+      </div>
+      <div>
+        <h3 class="leader__name">[Founder Name]</h3>
+        <span class="role">Founder &amp; Country Director, Philippines</span>
+        <p class="leader__bio">
+          [Founder Name] brought The Way to Happiness to the Philippines in 2019
+          and has led the foundation's work here ever since — training teachers,
+          youth leaders, police and correctional staff to share its 21 precepts in
+          their own communities. [Replace with a short personal story: how you
+          found the book, why you started, and what keeps you going.]
+        </p>
+        <blockquote class="leader__quote">
+          “Every person we train goes on to reach a hundred more. That is how a
+          country changes.”
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="officers">
+      <div class="kit officer">
+        <img src="assets/photos/team/president.jpg" width="800" height="1000" alt="Portrait of Aultan, President">
+        <div>
+          <h3 class="h-md">Aultan [Surname]</h3>
+          <span class="role">President</span>
+          <p>
+            Aultan oversees the foundation's programs and partnerships, working with
+            schools, local government units and community groups to bring the
+            precepts to more Filipinos each year. [Placeholder bio]
+          </p>
+        </div>
+      </div>
+      <div class="kit officer">
+        <img src="assets/photos/team/chair-emeritus.jpg" width="800" height="1000" alt="Portrait of Jerry de Tagle, Chair Emeritus">
+        <div>
+          <h3 class="h-md">Jerry de Tagle</h3>
+          <span class="role">Chair Emeritus · USA</span>
+          <p>
+            A long-time friend and supporter of the foundation, Jerry serves as
+            Chair Emeritus from the United States, offering guidance and helping
+            connect our work to The Way to Happiness community worldwide.
+            [Placeholder bio]
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="impact">
+      <h3 class="team__h3">Seven years in numbers</h3>
+      <p class="team__sub">Sample figures — to be confirmed</p>
+      <div class="stats">
+        <div><b>7</b><span>Years in the Philippines</span></div>
+        <div><b>12,000+</b><span>People trained</span></div>
+        <div><b>150+</b><span>Schools &amp; communities</span></div>
+        <div><b>50,000+</b><span>Booklets shared</span></div>
+      </div>
+    </div>
+
+    <div class="journey">
+      <h3 class="team__h3">Our journey</h3>
+      <ol>
+        <li><b>2019</b>Foundation established; first booklets distributed in Metro Manila.</li>
+        <li><b>2020</b>Educator workshops begin, with lessons moved online during lockdown.</li>
+        <li><b>2021</b>Relief drives pair food packs with copies of the booklet.</li>
+        <li><b>2022</b>Corrections program launched with partner facilities.</li>
+        <li><b>2023</b>Youth leadership camps held in Luzon and the Visayas.</li>
+        <li><b>2024</b>Police and barangay officials trained as precept facilitators.</li>
+        <li><b>2025</b>Reached our 50,000th booklet shared.</li>
+      </ol>
+      <p class="team__note">[Milestones are placeholders — replace with real events]</p>
+    </div>
+
+    <div class="moments">
+      <h3 class="team__h3">Whom we've trained and touched</h3>
+      <div class="bento">
+        <figure class="is-big"><img src="assets/photos/impact/01.jpg" width="1200" height="900" loading="lazy" alt="A facilitator leading an educator workshop"><figcaption>Educator workshop, Quezon City</figcaption></figure>
+        <figure><img src="assets/photos/impact/02.jpg" width="1200" height="900" loading="lazy" alt="Smiling children gathered together"><figcaption>Children's outreach, Tondo</figcaption></figure>
+        <figure class="is-tall"><img src="assets/photos/impact/03.jpg" width="1200" height="900" loading="lazy" alt="Participants at a training seminar"><figcaption>Facilitator training seminar</figcaption></figure>
+        <figure><img src="assets/photos/impact/04.jpg" width="1200" height="900" loading="lazy" alt="A group of children at a community day"><figcaption>Community day, Cebu</figcaption></figure>
+        <figure class="is-wide"><img src="assets/photos/impact/05.jpg" width="1200" height="900" loading="lazy" alt="A volunteer in a volunteer shirt at an event"><figcaption>Volunteers at a city event</figcaption></figure>
+        <figure><img src="assets/photos/impact/06.jpg" width="1200" height="900" loading="lazy" alt="Pupils seated in a school classroom"><figcaption>Values class, public elementary school</figcaption></figure>
+        <figure><img src="assets/photos/impact/07.jpg" width="1200" height="900" loading="lazy" alt="Volunteers joining hands in a circle"><figcaption>Volunteer team pledge</figcaption></figure>
+        <figure class="is-wide"><img src="assets/photos/impact/08.jpg" width="1200" height="900" loading="lazy" alt="An audience listening to a talk"><figcaption>Precepts talk for local officials</figcaption></figure>
+        <figure><img src="assets/photos/impact/09.jpg" width="1200" height="900" loading="lazy" alt="A student reading and writing at a desk"><figcaption>Student reading program</figcaption></figure>
+        <figure><img src="assets/photos/impact/10.jpg" width="1200" height="900" loading="lazy" alt="Volunteers unloading supplies during a relief drive"><figcaption>Relief and booklet drive</figcaption></figure>
+      </div>
+      <p class="team__note">Placeholder photos from Unsplash — to be replaced with the foundation's own.</p>
     </div>
   </div>
 </section>
@@ -1463,6 +1738,7 @@ p { margin: 0; }
         <h4>The foundation</h4>
         <ul>
           <li><a href="#about">About us</a></li>
+          <li><a href="#team">Who we are</a></li>
           <li><a href="#precepts">The 21 precepts</a></li>
           <li><a href="#programs">Programs &amp; results</a></li>
           <li><a href="#order">Order</a></li>
